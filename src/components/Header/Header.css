@@ -1,0 +1,28 @@
+.shop-header{
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
+    border-bottom: 2px solid #f2f2f2;
+    padding: 0 15px;
+}
+
+.shop-logo{
+    font-family: 'Playfair display', serif;
+    font-size: 2rem;
+    color: inherit;
+}
+
+.shop-logo:hover, .shopping-info:hover{
+    text-decoration: none;
+    color: #008863;
+}
+
+.shopping-info{
+    color: black;
+}
+
+.shopping-info .shopping-cart-icon{
+    font-size: 1.4rem;
+    color: #008863;
+    margin-right: 5px;
+}

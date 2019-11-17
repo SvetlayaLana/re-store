@@ -3,8 +3,8 @@ import './Spinner.css';
 
 const Spinner = () => {
     return(
-        <div className="lds-css ng-scope">
-            <div style={{width: '100%', height: '100%'}} className="lds-eclipse">
+        <div className="loadingio-spinner-eclipse-vxbmhiyzt2">
+            <div className="ldio-y7qjdb5o06">
                 <div></div>
             </div>
         </div>

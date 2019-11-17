@@ -1,0 +1,16 @@
+.shopping-cart-buttons-set{
+    text-align: right;
+}
+
+.shopping-cart-buttons-set .btn{
+    font-size: .7rem;
+    padding: .2rem .45rem;
+    margin: auto .2rem;
+}
+
+.total-sum{
+    text-align: right;
+    padding: 0 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

@@ -16,10 +16,10 @@ class ErrorBoundary extends React.Component{
         const { hasError } = this.state;
 
         if (hasError)
-            return <ErrorIndicator />
+            return <ErrorIndicator />;
 
         return this.props.children;
     }
-};
+}
 
 export default ErrorBoundary;

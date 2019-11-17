@@ -1,0 +1,50 @@
+.book-list-item{
+
+}
+
+.book-cover{
+    margin-right: 2rem;
+}
+
+.book-cover img{
+    display: block;
+    width: 100%;
+    max-width: 120px;
+}
+
+.book-description{
+    display: flex;
+    flex-direction: column;
+}
+
+.book-title{
+    color: black;
+    font-size: 1.1rem;
+}
+
+.book-title:hover{
+    text-decoration: none;
+    color: #008863;
+}
+
+.book-author{
+    color: #252525;
+    font-size: .9rem;
+    margin: .2rem 0;
+}
+
+.book-price{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.btn-add-to-cart{
+    margin-top: .5rem;
+    background-color: #008863;
+    width: 120px;
+}
+
+.btn-add-to-cart:hover{
+    background-color: #00704d;
+}
+

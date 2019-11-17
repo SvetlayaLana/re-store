@@ -1,16 +1,26 @@
 import React from 'react';
 
-class BookList extends React.Component{
-    render() {
-        const { books } = this.props;
-        return(
-            <ul>
-                {
-                    books.map((book))
-                }
-            </ul>
-        )
-    }
+import BookListItem from "../BookListItem";
+
+import './BookList.css';
+
+
+const BookList = ({ books, onAddedToCart }) => {
+    return(
+        <ul className='list-group list-group-flush books-list'>
+            {
+                books.map((book) =>{
+                    return(
+                        <li key={book.id} className='list-group-item'>
+                            <BookListItem book={book} onAddedToCart={() => onAddedToCart(book.id)}/>
+                        </li>
+                    )
+                })
+            }
+        </ul>
+    )
 };
 
 export default BookList;
+
+
