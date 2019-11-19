@@ -28,15 +28,14 @@ class BookListContainer extends React.Component{
 }
 
 const mapStateToProps = (state) => ({
-    books: state.books,
-    loading: state.loading,
-    error: state.error
+    books: state.bookList.books,
+    loading: state.bookList.loading,
+    error: state.bookList.error
 });
 
 const mapDispatchToProps = (dispatch, { bookstoreService }) => ({
     fetchBooks: fetchBooks(dispatch, bookstoreService),
     onAddedToCart: (id) => {
-        console.log('Added to cart', id);
         dispatch(bookAddedToCart(id));
     }
 });

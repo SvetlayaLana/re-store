@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 import { getCountItems } from "../../utils/helper";
 
@@ -15,8 +15,8 @@ const HeaderContainer = ({cartItems, totalPrice}) => {
 };
 
 const mapStateToProps = (state) => ({
-    cartItems: state.cartItems,
-    totalPrice: state.totalPrice
+    cartItems: state.shoppingCart.cartItems,
+    totalPrice: state.shoppingCart.totalPrice
 });
 
 export default connect(mapStateToProps, null)(HeaderContainer);

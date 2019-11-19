@@ -57,8 +57,8 @@ const ShoppingCartTable = ({ items, totalPrice, onIncrease, onDecrease, onDelete
 };
 
 const mapStateToProps = (state) => ({
-    items: state.cartItems,
-    totalPrice: state.totalPrice
+    items: state.shoppingCart.cartItems,
+    totalPrice: state.shoppingCart.totalPrice
 });
 
 const mapDispatchToProps = {
