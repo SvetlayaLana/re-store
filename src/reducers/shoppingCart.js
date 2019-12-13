@@ -1,25 +1,18 @@
 import { updateOrder } from "../utils/helper";
 
-const updateShoppingCart = (state, action) => {
-
-    if(state === undefined)
-        return {
-            cartItems: [],
-            totalPrice: 0
-        };
-
+const updateShoppingCart = (shoppingCart, action) => {
     switch (action.type) {
         case 'BOOK_ADDED_TO_CART':
-            return updateOrder(state, action.payload, 1);
+            return updateOrder(shoppingCart, action.payload, 1);
 
         case 'BOOK_DELETED_FROM_CART':
-            return updateOrder(state, action.payload, -1);
+            return updateOrder(shoppingCart, action.payload, -1);
 
         case 'BOOK_ALL_DELETED_FROM_CART':
-            const item = state.shoppingCart.cartItems.find(item => item.id === action.payload);
-            return updateOrder(state, action.payload, -item.count);
+            const item = shoppingCart.cartItems.find(item => item.id === action.payload);
+            return updateOrder(shoppingCart, action.payload, -item.count);
         default:
-            return state.shoppingCart
+            return shoppingCart
     }
 };
 

@@ -37,12 +37,9 @@ export const getOrderTotal = (prevTotal, price, quantity) => {
       return prevTotal + quantity*price;
 };
 
-export const updateOrder = (state, bookId, quantity) => {
-    const { bookList: { books }, shoppingCart: { cartItems, totalPrice } } = state;
+export const updateOrder = ({ cartItems, totalPrice }, book, quantity) => {
 
-    const book = books.find(item => item.id === bookId);
-
-    const itemIndex = cartItems.findIndex((item) => item.id === bookId);
+    const itemIndex = cartItems.findIndex((item) => item.id === book.id);
     const item = cartItems[itemIndex];
 
     const newItem = updateCartItem(book, item, quantity);

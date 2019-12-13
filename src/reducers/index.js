@@ -1,10 +1,22 @@
 import updateBookList from "./bookList";
 import updateShoppingCart from "./shoppingCart";
 
-const reducer = (state, action) => {
+const initialState = {
+    bookList: {
+        books: [],
+        loading: true,
+        error: null,
+    } ,
+    shoppingCart: {
+        cartItems: [],
+        totalPrice: 0
+    }
+};
+
+const reducer = (state = initialState, action) => {
     return {
-        bookList: updateBookList(state, action),
-        shoppingCart: updateShoppingCart(state, action)
+        bookList: updateBookList(state.bookList, action),
+        shoppingCart: updateShoppingCart(state.shoppingCart, action)
     }
 };
 

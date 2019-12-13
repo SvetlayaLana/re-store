@@ -12,13 +12,11 @@ const booksError = (error) => ({
     payload: error
 });
 
-const fetchBooks = (dispatch, bookstoreService) => () => {
+const fetchBooks = (bookstoreService) => () => (dispatch) => {
     dispatch(booksRequested());
     bookstoreService.getBooks()
         .then((data) => dispatch(booksLoaded(data)))
-        .catch((error) => {
-            dispatch(booksError(error));
-        });
+        .catch((error) => dispatch(booksError(error)))
 };
 
 const bookDeletedFromCart = (itemId) => ({
@@ -31,10 +29,15 @@ const bookAllDeletedFromCart = (itemId) => ({
     payload: itemId
 });
 
-const bookAddedToCart = (itemId) => ({
-    type: 'BOOK_ADDED_TO_CART',
-    payload: itemId
-});
+const bookAddedToCart = (itemId) => (dispatch, getState) => {
+    const { bookList: { books } } = getState();
+    const book = books.find(item => item.id === itemId);
+
+    dispatch({
+        type: 'BOOK_ADDED_TO_CART',
+        payload: book
+    })
+};
 
 export {
     fetchBooks,

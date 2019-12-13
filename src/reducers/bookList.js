@@ -1,11 +1,4 @@
-const updateBookList = (state, action) => {
-
-    if(state === undefined)
-        return {
-            books: [],
-            loading: true,
-            error: null,
-        };
+const updateBookList = (bookList, action) => {
 
     switch (action.type) {
         case 'FETCH_BOOKS_REQUEST':
@@ -27,7 +20,8 @@ const updateBookList = (state, action) => {
                 error: action.payload
             };
         default:
-            return state.bookList
+            console.log(bookList);
+            return bookList
 
     }
 };
