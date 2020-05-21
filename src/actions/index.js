@@ -19,15 +19,25 @@ const fetchBooks = (bookstoreService) => () => (dispatch) => {
         .catch((error) => dispatch(booksError(error)))
 };
 
-const bookDeletedFromCart = (itemId) => ({
-    type: 'BOOK_DELETED_FROM_CART',
-    payload: itemId
-});
+const bookDeletedFromCart = (itemId) => (dispatch, getState) => {
+    const { bookList: { books } } = getState();
+    const book = books.find(item => item.id === itemId);
 
-const bookAllDeletedFromCart = (itemId) => ({
-    type: 'BOOK_ALL_DELETED_FROM_CART',
-    payload: itemId
-});
+    dispatch({
+        type: 'BOOK_DELETED_FROM_CART',
+        payload: book,
+    });
+};
+
+const bookAllDeletedFromCart = (itemId) => (dispatch, getState) => {
+    const { bookList: { books } } = getState();
+    const book = books.find(item => item.id === itemId);
+
+    dispatch({
+        type: 'BOOK_ALL_DELETED_FROM_CART',
+        payload: book
+    });
+};
 
 const bookAddedToCart = (itemId) => (dispatch, getState) => {
     const { bookList: { books } } = getState();
