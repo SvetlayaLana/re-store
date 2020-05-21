@@ -6,10 +6,10 @@ import Header from "../Header";
 const App = () => {
     return (
         <main role='main' className='container'>
-            <Header countItems={3} totalPrice={234}/>
+            <Header/>
             <Switch>
-                <Route exact path='/' component={HomePage}/>
-                <Route exact path='/cart' component={CartPage}/>
+                <Route exact path='/re-store/' component={HomePage}/>
+                <Route exact path='/re-store/cart' component={CartPage}/>
             </Switch>
         </main>
     )

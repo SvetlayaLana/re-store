@@ -14,7 +14,7 @@ const prodConfiguration = env => {
     {
       output: {
         filename: "[name].bundle.js",
-        path: path.join(APP_DIR, 'build')
+        path: path.join(APP_DIR, 'docs')
       },
       mode: 'production',
       devtool: 'cheap-module-source-map',
